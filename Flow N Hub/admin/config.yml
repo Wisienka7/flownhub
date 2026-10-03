@@ -1,0 +1,71 @@
+backend:
+  name: git-gateway
+  branch: main # Zmień na 'master' jeśli na GitHubie Twoja główna gałąź to master
+
+media_folder: "."
+public_folder: "/"
+
+collections:
+  - name: "strony"
+    label: "Zarządzanie Treścią"
+    files:
+      - label: "Strona Główna - Kreator"
+        name: "home"
+        file: "content.json"
+        fields:
+          # --- SEKCJA HERO (Zawsze na górze) ---
+          - {label: "Główne Hasło (Zamiast Sky is the limit)", name: "hero_title", widget: "string"}
+          - {label: "Opis pod hasłem", name: "hero_desc", widget: "text"}
+          - {label: "Tekst na przycisku głównym", name: "hero_btn_text", widget: "string"}
+          
+          # --- KREATOR BLOKÓW STRONY ---
+          - label: "Sekcje na stronie (Dodawaj i przesuwaj bloki)"
+            name: "sekcje"
+            widget: "list"
+            types:
+              
+              # BLOK 1: KAFELKI (np. "Brzmi znajomo?")
+              - label: "Blok z kafelkami"
+                name: "blok_kafelki"
+                widget: "object"
+                fields:
+                  - {label: "Tytuł głównej sekcji", name: "tytul", widget: "string"}
+                  - {label: "Opis sekcji (opcjonalny)", name: "opis", widget: "text", required: false}
+                  - label: "Lista Kafelków"
+                    name: "kafelki"
+                    widget: "list"
+                    fields:
+                      - {label: "Tytuł kafelka", name: "tytul_kafelek", widget: "string"}
+                      - {label: "Tekst w kafelku", name: "tekst_kafelek", widget: "text"}
+                      - {label: "Tekst na przycisku (opcjonalny)", name: "btn_text", widget: "string", required: false}
+                      - {label: "Link do przycisku (opcjonalny)", name: "btn_link", widget: "string", required: false}
+
+              # BLOK 2: TEKST + GRAFIKA
+              - label: "Tekst i Grafika obok siebie"
+                name: "blok_tekst_grafika"
+                widget: "object"
+                fields:
+                  - {label: "Tytuł", name: "tytul", widget: "string"}
+                  - {label: "Treść", name: "tresc", widget: "markdown"}
+                  - {label: "Grafika/Zdjęcie", name: "zdjecie", widget: "image"}
+                  - {label: "Układ", name: "uklad", widget: "select", options: ["Grafika po prawej", "Grafika po lewej"]}
+                  - {label: "Tekst przycisku (opcjonalny)", name: "btn_text", widget: "string", required: false}
+                  - {label: "Link przycisku (opcjonalny)", name: "btn_link", widget: "string", required: false}
+
+              # BLOK 3: TYLKO TYTUŁ I TEKST
+              - label: "Tylko Tytuł i Tekst"
+                name: "blok_tytul_tekst"
+                widget: "object"
+                fields:
+                  - {label: "Tytuł", name: "tytul", widget: "string"}
+                  - {label: "Treść (możesz pogrubiać, robić akapity)", name: "tresc", widget: "markdown"}
+                  - {label: "Tekst przycisku (opcjonalny)", name: "btn_text", widget: "string", required: false}
+                  - {label: "Link przycisku (opcjonalny)", name: "btn_link", widget: "string", required: false}
+
+              # BLOK 4: WŁASNY KOD HTML
+              - label: "Zaawansowane: Własny Kod HTML"
+                name: "blok_html"
+                widget: "object"
+                fields:
+                  - {label: "Nazwa robocza bloku (tylko dla Ciebie, żebyś wiedziała co to)", name: "nazwa_robocza", widget: "string"}
+                  - {label: "Wklej kod HTML", name: "kod", widget: "code"}
