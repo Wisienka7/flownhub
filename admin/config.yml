@@ -24,7 +24,7 @@ collections:
             widget: "list"
             types:
               
-              # BLOK 1: KAFELKI (np. "Brzmi znajomo?")
+             # BLOK 1: KAFELKI (np. "Brzmi znajomo?")
               - label: "Blok z kafelkami"
                 name: "blok_kafelki"
                 widget: "object"
@@ -37,6 +37,7 @@ collections:
                     widget: "list"
                     fields:
                       - {label: "Tytuł kafelka", name: "tytul_kafelek", widget: "string"}
+                      - {label: "Wybierz Ikonę", name: "ikona", widget: "select", options: ["Zegar", "Dokumenty", "Trybik", "Kopiuj", "Żarówka", "Ostrzeżenie", "Wykres"]}
                       - {label: "Tekst w kafelku", name: "tekst_kafelek", widget: "text"}
                       - {label: "Tekst na przycisku (opcjonalny)", name: "btn_text", widget: "string", required: false}
                       - {label: "Link do przycisku (opcjonalny)", name: "btn_link", widget: "string", required: false}
@@ -70,3 +71,10 @@ collections:
                 fields:
                   - {label: "Nazwa robocza bloku (tylko dla Ciebie, żebyś wiedziała co to)", name: "nazwa_robocza", widget: "string"}
                   - {label: "Wklej kod HTML", name: "kod", widget: "code"}
+
+                  # BLOK 5: TYLKO TEKST (BEZ TYTUŁU)
+              - label: "Sam tekst (bez tytułu)"
+                name: "blok_sam_tekst"
+                widget: "object"
+                fields:
+                  - {label: "Treść (możesz pogrubiać, robić akapity, linki)", name: "tresc", widget: "markdown"}
