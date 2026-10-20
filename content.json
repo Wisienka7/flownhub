@@ -49,7 +49,16 @@
           "ikona": "Żarówka",
           "tekst_kafelek": "Wdrażamy zaawansowaną sztuczną inteligencję, która analizuje, przewiduje, odpisuje na maile i znacząco optymalizuje koszty w Twojej firmie."
         }
-      ]
+      ],
+      "styl": "Niebieski (Rozwiązania)"
+    },
+    {
+      "type": "blok_cta",
+      "tytul": " Oszczędzanie czasu wymaga",
+      "tytul_wyrozniony": "odpowiednich narzędzi",
+      "opis": "Opisz nam z czym zmagasz się każdego dnia. My zajmiemy się resztą.",
+      "btn_text": "NAPISZ DO NAS",
+      "btn_link": " mailto:nataliawisnia2001@gmail.com"
     }
   ]
 }
