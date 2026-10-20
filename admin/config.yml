@@ -78,3 +78,14 @@ collections:
                 widget: "object"
                 fields:
                   - {label: "Treść (możesz pogrubiać, robić akapity, linki)", name: "tresc", widget: "markdown"}
+
+                  # BLOK 6: BANER CTA (Wezwanie do działania)
+              - label: "Baner CTA (Wezwanie do działania)"
+                name: "blok_cta"
+                widget: "object"
+                fields:
+                  - {label: "Tytuł (zwykły tekst)", name: "tytul", widget: "string"}
+                  - {label: "Tytuł wyróżniony (kolor cyjanowy - pojawi się na końcu)", name: "tytul_wyrozniony", widget: "string", required: false}
+                  - {label: "Krótki opis (pod tytułem)", name: "opis", widget: "text"}
+                  - {label: "Tekst na przycisku", name: "btn_text", widget: "string"}
+                  - {label: "Link w przycisku (np. mailto:kontakt@flownhub.pl)", name: "btn_link", widget: "string"}
