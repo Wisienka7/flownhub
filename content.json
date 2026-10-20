@@ -11,22 +11,45 @@
       "kafelki": [
         {
           "tytul_kafelek": "Ręczne przepisywanie danych",
-          "tekst_kafelek": "Twój zespół traci cenne godziny na kopiowanie informacji z maili do Excela, a z Excela do systemu księgowego? To idealny moment na robota, który zrobi to w ułamku sekundy."
+          "tekst_kafelek": "Twój zespół traci cenne godziny na kopiowanie informacji z maili do Excela, a z Excela do systemu księgowego? To idealny moment na robota, który zrobi to w ułamku sekundy.",
+          "ikona": "Kopiuj"
         },
         {
           "tytul_kafelek": "Zbyt wolna obsługa",
-          "tekst_kafelek": "Klienci długo czekają na wycenę lub odpowiedź, ponieważ proces utyka u różnych pracowników? Automatyzacja powiadomi odpowiednie osoby od razu lub sama wyśle wstępną odpowiedź."
+          "tekst_kafelek": "Klienci długo czekają na wycenę lub odpowiedź, ponieważ proces utyka u różnych pracowników? Automatyzacja powiadomi odpowiednie osoby od razu lub sama wyśle wstępną odpowiedź.",
+          "ikona": "Zegar"
         },
         {
           "tytul_kafelek": "Chaos i zagubione informacje",
-          "tekst_kafelek": "Informacje rozrzucone na różnych komunikatorach, w notatnikach i mailach? Sprawimy, że wszystkie systemy zaczną ze sobą \"rozmawiać\", tworząc jeden uporządkowany ekosystem."
+          "tekst_kafelek": "Informacje rozrzucone na różnych komunikatorach, w notatnikach i mailach? Sprawimy, że wszystkie systemy zaczną ze sobą \"rozmawiać\", tworząc jeden uporządkowany ekosystem.",
+          "ikona": "Dokumenty"
         }
       ]
     },
     {
-      "type": "blok_tytul_tekst",
-      "tresc": "***Ty opowiadasz nam o tym, co Cię irytuje w firmie.***\n***My projektujemy proces, który sprawia, że to działa się samo.***",
-      "tytul": "-"
+      "type": "blok_sam_tekst",
+      "tresc": "***Ty opowiadasz nam o tym, co Cię irytuje w firmie.***\n***My projektujemy proces, który sprawia, że to działa się samo.***"
+    },
+    {
+      "type": "blok_kafelki",
+      "tytul": "Rozwiązania dla nowoczesnych firm",
+      "kafelki": [
+        {
+          "tytul_kafelek": "Automatyzacja Procesów",
+          "ikona": "Trybik",
+          "tekst_kafelek": "Zastąp rutynowe zadania inteligentnymi algorytmami i robotami, uwalniając potencjał swojego zespołu. Maszyna nie potrzebuje urlopu."
+        },
+        {
+          "tytul_kafelek": " Integracje Systemów",
+          "ikona": "Dokumenty",
+          "tekst_kafelek": "Zbuduj spójny ekosystem IT. Gwarantujemy płynną i automatyczną wymianę danych między wszystkimi Twoimi aplikacjami i programami."
+        },
+        {
+          "tytul_kafelek": "Potęga AI",
+          "ikona": "Żarówka",
+          "tekst_kafelek": "Wdrażamy zaawansowaną sztuczną inteligencję, która analizuje, przewiduje, odpisuje na maile i znacząco optymalizuje koszty w Twojej firmie."
+        }
+      ]
     }
   ]
 }
