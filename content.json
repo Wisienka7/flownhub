@@ -1,0 +1,32 @@
+{
+  "hero_title": "Sky is the limit",
+  "hero_desc": "Pozwól automatyzacji oraz AI pracować na Twój sukces!\n\n",
+  "hero_btn_text": "UWOLNIJ SWÓJ CZAS",
+  "sekcje": [
+    {
+      "type": "blok_kafelki",
+      "styl": "Czerwony (Problemy)",
+      "tytul": "Brzmi znajomo?",
+      "opis": "Nie musisz znać się na skomplikowanym IT, programowaniu czy sztucznej inteligencji. Większość naszych klientów na początku mówi po prostu: \"Mamy z tym problem i tracimy przez to czas\". My zamieniamy te problemy w rozwiązania, które działają w tle.",
+      "kafelki": [
+        {
+          "tytul_kafelek": "Ręczne przepisywanie danych",
+          "tekst_kafelek": "Twój zespół traci cenne godziny na kopiowanie informacji z maili do Excela, a z Excela do systemu księgowego? To idealny moment na robota, który zrobi to w ułamku sekundy."
+        },
+        {
+          "tytul_kafelek": "Zbyt wolna obsługa",
+          "tekst_kafelek": "Klienci długo czekają na wycenę lub odpowiedź, ponieważ proces utyka u różnych pracowników? Automatyzacja powiadomi odpowiednie osoby od razu lub sama wyśle wstępną odpowiedź."
+        },
+        {
+          "tytul_kafelek": "Chaos i zagubione informacje",
+          "tekst_kafelek": "Informacje rozrzucone na różnych komunikatorach, w notatnikach i mailach? Sprawimy, że wszystkie systemy zaczną ze sobą \"rozmawiać\", tworząc jeden uporządkowany ekosystem."
+        }
+      ]
+    },
+    {
+      "type": "blok_tytul_tekst",
+      "tresc": "***Ty opowiadasz nam o tym, co Cię irytuje w firmie.***\n***My projektujemy proces, który sprawia, że to działa się samo.***",
+      "tytul": "-"
+    }
+  ]
+}
