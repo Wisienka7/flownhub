@@ -77,7 +77,7 @@
 <body class="antialiased">
     <canvas id="particle-canvas"></canvas>
 
-    <!-- Nawigacja - PRZYWRÓCONA W ORYGINALNEJ FORMIE -->
+    <!-- Nawigacja -->
     <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
@@ -109,7 +109,7 @@
     <!-- Tutaj Javascript wrzuci całą treść z CMS -->
     <main id="app-content"></main>
 
-    <!-- Stopka - PRZYWRÓCONA W ORYGINALNEJ FORMIE -->
+    <!-- Stopka -->
     <footer class="relative z-10 border-t border-gray-800 bg-ngen-dark/80 backdrop-blur-md mt-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row items-center justify-between">
             <div class="flex items-center mb-4 md:mb-0">
@@ -146,7 +146,7 @@
             .then(data => {
                 let html = '';
 
-                // HERO - PRZYWRÓCONE LOGO
+                // HERO - USUNIĘTO "SCROLL"
                 html += `
                 <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden min-h-screen flex items-center">
                     <div class="absolute inset-0 bg-gradient-radial from-ngen-blue/40 to-transparent opacity-60 z-0"></div>
@@ -173,10 +173,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce opacity-70">
-                        <span class="text-xs uppercase tracking-widest text-ngen-cyan mb-2">Scroll</span>
-                        <svg class="w-6 h-6 text-ngen-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
                     </div>
                 </header><div id="sekcje"></div>`;
 
@@ -239,13 +235,18 @@
                                 break;
 
                             case 'blok_sam_tekst':
-                                // TUTAJ NAPRAWIONY TEKST - Bez ramki i tła, pogrubiony, cyjanowy cytat!
                                 let rawText = marked.parse(blok.tresc || '');
                                 rawText = rawText.replace(/<p>/g, '<p class="text-ngen-cyan m-0">');
                                 html += `<div class="max-w-3xl mx-auto text-center reveal text-xl text-ngen-cyan font-bold italic leading-relaxed bg-transparent border-none p-0">${rawText}</div>`;
                                 break;
 
                             case 'blok_cta':
+                                // POWIĘKSZONY PRZYCISK TYLKO DLA TEGO BLOKU CTA
+                                let ctaBtnHtml = '';
+                                if(blok.btn_text) {
+                                    ctaBtnHtml = `<a href="${blok.btn_link || '#'}" class="mt-8 inline-block px-12 py-5 text-lg md:text-xl font-bold uppercase tracking-widest rounded-full transition-all duration-300 neon-border hover:shadow-[0_0_40px_#00f3ff] hover:bg-ngen-cyan hover:text-black text-ngen-cyan">${blok.btn_text}</a>`;
+                                }
+                                
                                 html += `
                                 <div id="kontakt" class="max-w-5xl mx-auto text-center reveal glass-panel rounded-3xl p-12 border border-ngen-cyan/20 relative overflow-hidden">
                                     <div class="absolute -top-24 -left-24 w-48 h-48 bg-ngen-cyan rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
@@ -254,7 +255,7 @@
                                         ${blok.tytul || ''} <span class="text-transparent bg-clip-text bg-gradient-to-r from-ngen-cyan to-blue-400">${blok.tytul_wyrozniony || ''}</span>
                                     </h2>
                                     <p class="text-xl text-gray-300 mb-10 font-light italic relative z-10">${blok.opis || ''}</p>
-                                    ${renderBtn(blok.btn_text, blok.btn_link)}
+                                    <div class="relative z-10">${ctaBtnHtml}</div>
                                 </div>`;
                                 break;
                                 
