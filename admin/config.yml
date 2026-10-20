@@ -31,6 +31,7 @@ collections:
                 fields:
                   - {label: "Tytuł głównej sekcji", name: "tytul", widget: "string"}
                   - {label: "Opis sekcji (opcjonalny)", name: "opis", widget: "text", required: false}
+                  - {label: "Styl wizualny kafelków", name: "styl", widget: "select", options: ["Niebieski (Rozwiązania)", "Czerwony (Problemy)"]}
                   - label: "Lista Kafelków"
                     name: "kafelki"
                     widget: "list"
