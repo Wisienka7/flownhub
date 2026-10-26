@@ -4,11 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Panel Zarządzania - Flow N Hub</title>
-    <!-- Skrypt do logowania Netlify -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
-    <!-- Skrypt wczytujący cały interfejs CMS -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    
+    <script>
+      // Jeśli otwieramy panel na Vercel, łączymy go z darmowym logowaniem na Netlify
+      if (window.location.hostname !== "localhost") {
+        window.localStorage.setItem("netlifySiteURL", "https://TWOJA-NAZWA.netlify.app");
+      }
+    </script>
   </body>
 </html>
