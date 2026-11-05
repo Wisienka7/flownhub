@@ -90,3 +90,10 @@ collections:
                   - {label: "Krótki opis (pod tytułem)", name: "opis", widget: "text"}
                   - {label: "Tekst na przycisku", name: "btn_text", widget: "string"}
                   - {label: "Link w przycisku (np. mailto:kontakt@flownhub.pl)", name: "btn_link", widget: "string"}
+       # --- NOWA PODSTRONA: POLITYKA PRYWATNOŚCI ---
+      - label: "Polityka Prywatności"
+        name: "polityka"
+        file: "polityka.json"
+        fields:
+          - {label: "Tytuł strony", name: "tytul", widget: "string", default: "Polityka Prywatności"}
+          - {label: "Treść polityki", name: "tresc", widget: "markdown"}
