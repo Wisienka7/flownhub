@@ -6,9 +6,6 @@ backend:
 media_folder: "."
 public_folder: "/"
 
-media_folder: "."
-public_folder: "/"
-
 collections:
   - name: "strony"
     label: "Zarządzanie Treścią"
