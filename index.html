@@ -340,5 +340,65 @@
             });
         }
     </script>
+    <!-- BANER COOKIES I GOOGLE ANALYTICS -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-ngen-dark/95 border-t border-ngen-cyan/30 backdrop-blur-lg z-[100] transform translate-y-full transition-transform duration-500 flex flex-col md:flex-row items-center justify-between p-6 shadow-[0_-10px_40px_rgba(0,243,255,0.1)]">
+        <div class="text-gray-300 text-sm mb-4 md:mb-0 md:mr-8 text-center md:text-left">
+            Ta strona korzysta z ciasteczek (cookies) w celach statystycznych (Google Analytics). 
+            Klikając "Akceptuję", zgadzasz się na ich użycie. Więcej informacji znajdziesz w naszej 
+            <a href="/polityka-prywatnosci.html" class="text-ngen-cyan hover:underline font-bold">Polityce Prywatności</a>.
+        </div>
+        <div class="flex space-x-4 flex-shrink-0">
+            <button id="decline-cookies" class="px-5 py-2 rounded-full border border-gray-600 text-gray-400 hover:bg-gray-800 hover:text-white transition-colors text-sm font-bold uppercase tracking-wider">Odrzuć</button>
+            <button id="accept-cookies" class="px-5 py-2 rounded-full neon-border text-ngen-cyan hover:bg-ngen-cyan hover:text-black transition-all text-sm font-bold uppercase tracking-wider shadow-[0_0_15px_rgba(0,243,255,0.2)]">Akceptuję</button>
+        </div>
+    </div>
+
+    <script>
+        // UWAGA: TUTAJ WPISZ SWÓJ IDENTYFIKATOR GOOGLE ANALYTICS
+        const GA_TRACKING_ID = 'G-EEXYZY2BZ2'; 
+
+        const cookieBanner = document.getElementById('cookie-banner');
+        const acceptBtn = document.getElementById('accept-cookies');
+        const declineBtn = document.getElementById('decline-cookies');
+
+        // Funkcja ładująca skrypt Google Analytics
+        function loadGoogleAnalytics() {
+            if (!GA_TRACKING_ID || GA_TRACKING_ID === 'G-XXXXXXXXXX') return;
+            const script = document.createElement('script');
+            script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`;
+            script.async = true;
+            document.head.appendChild(script);
+
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            
+            // Konfiguracja GA z włączoną anonimizacją IP (wymóg prawny)
+            gtag('config', GA_TRACKING_ID, { 'anonymize_ip': true });
+        }
+
+        // Sprawdzanie, czy użytkownik już podjął decyzję
+        const cookieConsent = localStorage.getItem('cookieConsent');
+
+        if (cookieConsent === 'accepted') {
+            loadGoogleAnalytics();
+        } else if (!cookieConsent) {
+            // Pokaż baner z płynną animacją po 1 sekundzie od wejścia na stronę
+            setTimeout(() => {
+                cookieBanner.classList.remove('translate-y-full');
+            }, 1000);
+        }
+
+        acceptBtn.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'accepted');
+            cookieBanner.classList.add('translate-y-full'); // Schowaj baner
+            loadGoogleAnalytics(); // Uruchom śledzenie
+        });
+
+        declineBtn.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'declined');
+            cookieBanner.classList.add('translate-y-full'); // Tylko schowaj baner, nie uruchamiaj GA
+        });
+    </script>
 </body>
 </html>
