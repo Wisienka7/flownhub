@@ -117,8 +117,11 @@
                 <img class="h-6 w-auto dark-mode-logo opacity-70" src="LOGO MINI FLOW N HUB.jpeg" onerror="this.src='Gemini_Generated_Image_qyc351qyc351qyc3.jpeg'" alt="Sygnet Flow N Hub">
                 <span class="ml-2 font-orbitron font-bold text-gray-400 tracking-wider text-sm">FLOW N HUB</span>
             </div>
-            <p class="text-gray-500 text-sm font-light">
-                &copy; <script>document.write(new Date().getFullYear())</script> Flow N Hub. Wszelkie prawa zastrzeżone. | Sky is the limit.
+            <p class="text-gray-500 text-sm font-light text-center md:text-right">
+                &copy; <script>document.write(new Date().getFullYear())</script> Flow N Hub. Wszelkie prawa zastrzeżone.<br>
+                <a href="/polityka-prywatnosci.html" class="text-ngen-cyan hover:underline mt-2 inline-block transition-colors">Polityka Prywatności</a>
+                <span class="text-gray-600 mx-2 mt-2 inline-block">|</span>
+                <a href="#" id="open-cookie-settings" class="text-gray-400 hover:text-ngen-cyan hover:underline mt-2 inline-block transition-colors">Ustawienia Cookies</a>
             </p>
         </div>
     </footer>
@@ -147,7 +150,7 @@
             .then(data => {
                 let html = '';
 
-                // HERO - USUNIĘTO "SCROLL"
+                // HERO
                 html += `
                 <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden min-h-screen flex items-center">
                     <div class="absolute inset-0 bg-gradient-radial from-ngen-blue/40 to-transparent opacity-60 z-0"></div>
@@ -360,11 +363,17 @@
         const cookieBanner = document.getElementById('cookie-banner');
         const acceptBtn = document.getElementById('accept-cookies');
         const declineBtn = document.getElementById('decline-cookies');
+        const openSettingsBtn = document.getElementById('open-cookie-settings');
 
         // Funkcja ładująca skrypt Google Analytics
         function loadGoogleAnalytics() {
             if (!GA_TRACKING_ID || GA_TRACKING_ID === 'G-XXXXXXXXXX') return;
+            
+            // Zabezpieczenie przed podwójnym załadowaniem
+            if (document.getElementById('ga-script')) return; 
+
             const script = document.createElement('script');
+            script.id = 'ga-script';
             script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`;
             script.async = true;
             document.head.appendChild(script);
@@ -372,33 +381,48 @@
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            
-            // Konfiguracja GA z włączoną anonimizacją IP (wymóg prawny)
             gtag('config', GA_TRACKING_ID, { 'anonymize_ip': true });
         }
 
-        // Sprawdzanie, czy użytkownik już podjął decyzję
+        // Sprawdzanie aktualnej zgody
         const cookieConsent = localStorage.getItem('cookieConsent');
 
         if (cookieConsent === 'accepted') {
             loadGoogleAnalytics();
         } else if (!cookieConsent) {
-            // Pokaż baner z płynną animacją po 1 sekundzie od wejścia na stronę
+            // Pokaż baner nowemu użytkownikowi
             setTimeout(() => {
                 cookieBanner.classList.remove('translate-y-full');
             }, 1000);
         }
 
+        // Akcja: Akceptacja
         acceptBtn.addEventListener('click', () => {
             localStorage.setItem('cookieConsent', 'accepted');
-            cookieBanner.classList.add('translate-y-full'); // Schowaj baner
-            loadGoogleAnalytics(); // Uruchom śledzenie
+            cookieBanner.classList.add('translate-y-full');
+            loadGoogleAnalytics();
         });
 
+        // Akcja: Odrzucenie / Wycofanie zgody
         declineBtn.addEventListener('click', () => {
+            const previousConsent = localStorage.getItem('cookieConsent');
             localStorage.setItem('cookieConsent', 'declined');
-            cookieBanner.classList.add('translate-y-full'); // Tylko schowaj baner, nie uruchamiaj GA
+            cookieBanner.classList.add('translate-y-full');
+            
+            // Jeśli użytkownik wycofuje wcześniej udzieloną zgodę, odświeżamy stronę, 
+            // aby przeglądarka fizycznie usunęła wczytane skrypty Google z pamięci
+            if (previousConsent === 'accepted') {
+                window.location.reload();
+            }
         });
+
+        // Akcja: Ponowne otwarcie baneru z poziomu stopki
+        if (openSettingsBtn) {
+            openSettingsBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                cookieBanner.classList.remove('translate-y-full');
+            });
+        }
     </script>
 </body>
 </html>
