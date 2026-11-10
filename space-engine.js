@@ -1,10 +1,140 @@
 /* =========================================================
-   FLOW N HUB: WSPÓLNY SILNIK KOSMOSU, INTERAKCJI I LOGO 3D
+   FLOW N HUB: WSPÓLNY SILNIK KOSMOSU, INTERAKCJI, MENU I COOKIES
    ========================================================= */
 
 const isMobile = window.innerWidth < 768;
 const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- 1. DYNAMICZNY GENERATOR NAWIGACJI I STOPKI ---------- */
+function injectGlobalLayout() {
+    const navContainer = document.getElementById('navbar-container');
+    const footerContainer = document.getElementById('footer-container');
+
+    // DYNAMICZNA NAWIGACJA Z MEGA MENU USŁUG
+    if (navContainer) {
+        navContainer.innerHTML = `
+        <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+                    
+                    <!-- Logo -->
+                    <a href="/index.html" class="flex-shrink-0 flex items-center cursor-pointer">
+                        <img class="h-10 w-auto dark-mode-logo" src="LOGO MINI FLOW N HUB.jpeg" onerror="this.src='Gemini_Generated_Image_qyc351qyc351qyc3.jpeg'" alt="Logo Flow N Hub">
+                        <span class="ml-3 font-orbitron font-bold text-xl tracking-widest text-white">FLOW N HUB</span>
+                    </a>
+
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-center space-x-8">
+                            
+                            <!-- ROZWIJANE MEGA MENU: USŁUGI -->
+                            <div class="relative dropdown-parent py-6">
+                                <button type="button" class="flex items-center space-x-2 text-sm font-medium uppercase tracking-wider hover:text-ngen-cyan transition-colors focus:outline-none">
+                                    <span>Usługi</span>
+                                    <svg class="w-4 h-4 chevron-icon text-ngen-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </button>
+
+                                <!-- OKNO DROPDOWN (MEGA MENU) -->
+                                <div class="dropdown-menu absolute left-1/2 -translate-x-1/2 top-full w-96 glass-panel rounded-2xl p-4 shadow-[0_10px_40px_rgba(0,243,255,0.15)] border border-ngen-cyan/30">
+                                    <div class="space-y-2">
+                                        <a href="/automatyzacje-procesow.html" class="mega-menu-link flex items-center p-3 rounded-xl border border-transparent">
+                                            <div class="w-9 h-9 rounded-lg bg-ngen-blue/80 border border-ngen-cyan/30 flex items-center justify-center text-ngen-cyan mr-3 flex-shrink-0">
+                                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                                            </div>
+                                            <div>
+                                                <div class="text-sm font-bold text-white font-orbitron">Automatyzacje procesów</div>
+                                                <div class="text-xs text-gray-400 font-light">Eliminacja ręcznej i powtarzalnej pracy</div>
+                                            </div>
+                                        </a>
+
+                                        <a href="/narzedzia-ulatwiajace-prace.html" class="mega-menu-link flex items-center p-3 rounded-xl border border-transparent">
+                                            <div class="w-9 h-9 rounded-lg bg-ngen-blue/80 border border-ngen-cyan/30 flex items-center justify-center text-ngen-cyan mr-3 flex-shrink-0">
+                                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 4a2 2 0 114 0v1a2 2 0 01-2 2 2 2 0 01-2-2V4zm-6 8a2 2 0 114 0v1a2 2 0 01-2 2 2 2 0 01-2-2v-1zm12 0a2 2 0 114 0v1a2 2 0 01-2 2 2 2 0 01-2-2v-1z"/></svg>
+                                            </div>
+                                            <div>
+                                                <div class="text-sm font-bold text-white font-orbitron">Narzędzia ułatwiające pracę</div>
+                                                <div class="text-xs text-gray-400 font-light">Dedykowane aplikacje i usprawnienia</div>
+                                            </div>
+                                        </a>
+
+                                        <a href="/zautomatyzowane-crm.html" class="mega-menu-link flex items-center p-3 rounded-xl border border-transparent">
+                                            <div class="w-9 h-9 rounded-lg bg-ngen-blue/80 border border-ngen-cyan/30 flex items-center justify-center text-ngen-cyan mr-3 flex-shrink-0">
+                                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                                            </div>
+                                            <div>
+                                                <div class="text-sm font-bold text-white font-orbitron">Zautomatyzowane systemy CRM</div>
+                                                <div class="text-xs text-gray-400 font-light">Self-managing leady i sprzedaż</div>
+                                            </div>
+                                        </a>
+
+                                        <a href="/zautomatyzowane-strony.html" class="mega-menu-link flex items-center p-3 rounded-xl border border-transparent">
+                                            <div class="w-9 h-9 rounded-lg bg-ngen-blue/80 border border-ngen-cyan/30 flex items-center justify-center text-ngen-cyan mr-3 flex-shrink-0">
+                                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                            </div>
+                                            <div>
+                                                <div class="text-sm font-bold text-white font-orbitron">Zautomatyzowane strony www</div>
+                                                <div class="text-xs text-gray-400 font-light">Nowoczesne witryny z integracją AI</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a href="/index.html#problemy" class="hover:text-ngen-cyan px-3 py-2 text-sm font-medium uppercase tracking-wider transition-colors">Dla kogo?</a>
+                            <a href="/index.html#kontakt" class="magnetic neon-border text-ngen-cyan px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wider">Kontakt</a>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <div class="-mr-2 flex md:hidden">
+                        <button type="button" id="menu-btn" aria-label="Menu" aria-expanded="false" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white">
+                            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Dropdown Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-ngen-dark/95 backdrop-blur-md border-t border-ngen-cyan/20 px-6 py-4 space-y-3">
+                <div class="text-ngen-cyan font-orbitron text-xs font-bold uppercase tracking-widest pt-2">Usługi:</div>
+                <a href="/automatyzacje-procesow.html" class="block pl-3 text-sm text-gray-300 hover:text-ngen-cyan">· Automatyzacje procesów</a>
+                <a href="/narzedzia-ulatwiajace-prace.html" class="block pl-3 text-sm text-gray-300 hover:text-ngen-cyan">· Narzędzia ułatwiające pracę</a>
+                <a href="/zautomatyzowane-crm.html" class="block pl-3 text-sm text-gray-300 hover:text-ngen-cyan">· Zautomatyzowane systemy CRM</a>
+                <a href="/zautomatyzowane-strony.html" class="block pl-3 text-sm text-gray-300 hover:text-ngen-cyan">· Zautomatyzowane strony www</a>
+                <hr class="border-gray-800 my-2">
+                <a href="/index.html#problemy" class="block text-sm uppercase tracking-wider hover:text-ngen-cyan">Dla kogo?</a>
+                <a href="/index.html#kontakt" class="block text-sm uppercase tracking-wider text-ngen-cyan font-bold">Kontakt</a>
+            </div>
+        </nav>`;
+    }
+
+    // DYNAMICZNA STOPKA
+    if (footerContainer) {
+        footerContainer.innerHTML = `
+        <footer class="relative z-10 border-t border-gray-800 bg-ngen-dark/80 backdrop-blur-md mt-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <img class="h-6 w-auto dark-mode-logo opacity-70" src="LOGO MINI FLOW N HUB.jpeg" onerror="this.src='Gemini_Generated_Image_qyc351qyc351qyc3.jpeg'" alt="Sygnet Flow N Hub">
+                    <span class="ml-2 font-orbitron font-bold text-gray-400 tracking-wider text-sm">FLOW N HUB</span>
+                </div>
+                <p class="text-gray-500 text-sm font-light text-center md:text-right">
+                    &copy; ${new Date().getFullYear()} Flow N Hub. Wszelkie prawa zastrzeżone.<br>
+                    <a href="/polityka-prywatnosci.html" class="text-ngen-cyan hover:underline mt-2 inline-block transition-colors">Polityka Prywatności</a>
+                    <span class="text-gray-600 mx-2 mt-2 inline-block">|</span>
+                    <a href="#" id="open-cookie-settings" class="text-gray-400 hover:text-ngen-cyan hover:underline mt-2 inline-block transition-colors">Ustawienia Cookies</a>
+                </p>
+            </div>
+        </footer>`;
+    }
+}
+
+// Wywołujemy wstrzyknięcie widoku od razu po załadowaniu skryptu
+injectGlobalLayout();
 
 /* ---------- GSAP + ScrollTrigger ---------- */
 window.initScrollReveal = function() {
@@ -64,7 +194,7 @@ window.initMagnetic = function() {
     });
 };
 
-/* ---------- Nawigacja ---------- */
+/* ---------- Inicjalizacja nawigacji i zachowań mobilnych ---------- */
 document.addEventListener('DOMContentLoaded', () => {
     initMagnetic();
     const navbar = document.getElementById('navbar');
@@ -85,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-/* ---------- TŁO KOSMICZNE: Three.js (Uruchamia się na KAŻDEJ podstronie) ---------- */
+/* ---------- TŁO KOSMICZNE: Three.js ---------- */
 (function initSpaceBackground() {
     if (!window.THREE) return;
     const canvas = document.getElementById('webgl');
@@ -269,10 +399,10 @@ document.addEventListener('DOMContentLoaded', () => {
     loop();
 })();
 
-/* ---------- LOGO 3D (Włącza się TYLKO gdy na stronie jest element #hero-stage) ---------- */
+/* ---------- LOGO 3D (Tylko na głównej z #hero-stage) ---------- */
 window.initHeroLogo = function () {
     const stage = document.getElementById('hero-stage');
-    if (!stage) return; // Na innych podstronach po prostu się nie uruchomi!
+    if (!stage) return;
     const fail = e => { console.warn('[Flow N Hub] logo 3D niedostępne, pokazuję logo 2D:', e); document.documentElement.classList.add('no-3d'); };
     if (!window.THREE) return fail('brak THREE');
     const canvas = document.createElement('canvas');
@@ -392,7 +522,7 @@ window.initHeroLogo = function () {
         .catch(err => { stop(); canvas.remove(); fail(err); });
 };
 
-/* ---------- OBSŁUGA COOKIES I ANALITYKI (Globalna) ---------- */
+/* ---------- OBSŁUGA COOKIES ---------- */
 document.addEventListener('DOMContentLoaded', () => {
     const GA_TRACKING_ID = 'G-EEXYZY2BZ2';
     const cookieBanner = document.getElementById('cookie-banner');
