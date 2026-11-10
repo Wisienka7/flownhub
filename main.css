@@ -58,3 +58,41 @@ a:focus-visible, button:focus-visible { outline: 2px solid #00f3ff; outline-offs
 }
 @media (prefers-reduced-motion: reduce) { .tilt, .tilt.leave { transition: none; } html { scroll-behavior: auto !important; } }
 .cookie-card.glass-panel { background: rgba(12,10,32,.96); }
+
+/* Styling Mega Menu dla Usług */
+.dropdown-menu {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px) scale(0.98);
+    transition: opacity 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0.3s;
+    pointer-events: none;
+}
+
+/* Wyświetlanie menu po nadejściu kursora lub kliknięciu */
+.dropdown-parent:hover .dropdown-menu,
+.dropdown-parent:focus-within .dropdown-menu,
+.dropdown-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+/* Strzałka przy "Usługi" */
+.chevron-icon {
+    transition: transform 0.3s ease;
+}
+.dropdown-parent:hover .chevron-icon,
+.dropdown-parent:focus-within .chevron-icon {
+    transform: rotate(180deg);
+}
+
+/* Podświetlenie elementów Mega Menu */
+.mega-menu-link {
+    transition: all 0.25s ease;
+}
+.mega-menu-link:hover {
+    background: rgba(0, 243, 255, 0.08);
+    border-color: rgba(0, 243, 255, 0.4);
+    transform: translateX(6px);
+}
