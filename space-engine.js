@@ -38,7 +38,7 @@ function injectGlobalLayout() {
                                 </button>
 
                                 <!-- OKNO DROPDOWN (MEGA MENU) -->
-                                <div class="dropdown-menu absolute left-1/2 -translate-x-1/2 top-full w-96 glass-panel rounded-2xl p-4 shadow-[0_10px_40px_rgba(0,243,255,0.15)] border border-ngen-cyan/30">
+                                <div class="dropdown-menu absolute left-1/2 -translate-x-1/2 top-full mt-1 w-96 bg-ngen-blue/95 backdrop-blur-xl rounded-2xl p-4 shadow-[0_20px_50px_rgba(0,0,0,0.6)] border border-ngen-cyan/40 z-50">
                                     <div class="space-y-2">
                                         <a href="/automatyzacje-procesow.html" class="mega-menu-link flex items-center p-3 rounded-xl border border-transparent">
                                             <div class="w-9 h-9 rounded-lg bg-ngen-blue/80 border border-ngen-cyan/30 flex items-center justify-center text-ngen-cyan mr-3 flex-shrink-0">
