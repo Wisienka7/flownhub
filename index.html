@@ -10,7 +10,7 @@
     <meta name="keywords" content="automatyzacja procesów, integracje systemów, AI w firmie, automatyzacja zadań, optymalizacja kosztów, Flow N Hub, usprawnianie pracy">
     <meta name="author" content="Flow N Hub">
 
-    <!-- Fonty i CDN bibliotek -->
+    <!-- Fonty i biblioteki CDN -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -32,7 +32,6 @@
         }
     </script>
 
-    <!-- WSPÓLNE STYLE DLA CAŁEGO SERWISU -->
     <link rel="stylesheet" href="main.css">
 </head>
 <body class="antialiased">
@@ -40,57 +39,16 @@
     <div id="cursor-glow"></div>
     <div id="scroll-bar"></div>
 
-    <!-- Wspólna nawigacja -->
-    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <img class="h-10 w-auto dark-mode-logo" src="LOGO MINI FLOW N HUB.jpeg" onerror="this.src='Gemini_Generated_Image_qyc351qyc351qyc3.jpeg'" alt="Logo Flow N Hub">
-                    <span class="ml-3 font-orbitron font-bold text-xl tracking-widest text-white">FLOW N HUB</span>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-center space-x-8">
-                        <a href="/index.html#problemy" class="hover:text-ngen-cyan px-3 py-2 rounded-md text-sm font-medium uppercase tracking-wider transition-colors">Dla kogo?</a>
-                        <a href="/index.html#uslugi" class="hover:text-ngen-cyan px-3 py-2 rounded-md text-sm font-medium uppercase tracking-wider transition-colors">Możliwości</a>
-                        <a href="/index.html#kontakt" class="magnetic neon-border text-ngen-cyan px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wider">Kontakt</a>
-                    </div>
-                </div>
-                <div class="-mr-2 flex md:hidden">
-                    <button type="button" id="menu-btn" aria-label="Menu" aria-expanded="false" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white">
-                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-ngen-dark/95 backdrop-blur-md border-t border-ngen-cyan/20 px-6 py-4 space-y-3">
-            <a href="/index.html#problemy" class="block text-sm uppercase tracking-wider hover:text-ngen-cyan">Dla kogo?</a>
-            <a href="/index.html#uslugi" class="block text-sm uppercase tracking-wider hover:text-ngen-cyan">Możliwości</a>
-            <a href="/index.html#kontakt" class="block text-sm uppercase tracking-wider text-ngen-cyan font-bold">Kontakt</a>
-        </div>
-    </nav>
+    <!-- DYNAMICZNY CONTAINER DLA NAWIGACJI -->
+    <div id="navbar-container"></div>
 
-    <!-- Kontener zasilany dynamicznie z pliku content.json -->
+    <!-- GŁÓWNA TREŚĆ STRONY Z CONTENT.JSON -->
     <main id="app-content"></main>
 
-    <!-- Wspólna stopka -->
-    <footer class="relative z-10 border-t border-gray-800 bg-ngen-dark/80 backdrop-blur-md mt-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row items-center justify-between">
-            <div class="flex items-center mb-4 md:mb-0">
-                <img class="h-6 w-auto dark-mode-logo opacity-70" src="LOGO MINI FLOW N HUB.jpeg" onerror="this.src='Gemini_Generated_Image_qyc351qyc351qyc3.jpeg'" alt="Sygnet Flow N Hub">
-                <span class="ml-2 font-orbitron font-bold text-gray-400 tracking-wider text-sm">FLOW N HUB</span>
-            </div>
-            <p class="text-gray-500 text-sm font-light text-center md:text-right">
-                &copy; <script>document.write(new Date().getFullYear())</script> Flow N Hub. Wszelkie prawa zastrzeżone.<br>
-                <a href="/polityka-prywatnosci.html" class="text-ngen-cyan hover:underline mt-2 inline-block transition-colors">Polityka Prywatności</a>
-                <span class="text-gray-600 mx-2 mt-2 inline-block">|</span>
-                <a href="#" id="open-cookie-settings" class="text-gray-400 hover:text-ngen-cyan hover:underline mt-2 inline-block transition-colors">Ustawienia Cookies</a>
-            </p>
-        </div>
-    </footer>
+    <!-- DYNAMICZNY CONTAINER DLA STOPKI -->
+    <div id="footer-container"></div>
 
-    <!-- Wspólne okno Cookies -->
+    <!-- Wspólne okienko Cookies -->
     <div id="cookie-banner" class="cookie-overlay" role="dialog" aria-modal="true" aria-labelledby="cookie-title" aria-hidden="true">
         <div class="cookie-card glass-panel rounded-2xl p-6 sm:p-8 text-center">
             <h2 id="cookie-title" class="font-orbitron text-lg font-bold text-white mb-3">Pliki cookies</h2>
@@ -106,10 +64,10 @@
         </div>
     </div>
 
-    <!-- SILNIK 3D, ANIMACJE ORAZ COOKIES ZE WSPÓLNEGO PLIKU -->
+    <!-- WSPÓLNY SILNIK KOSMOSU, MENU I ANIMACJI -->
     <script src="space-engine.js"></script>
 
-    <!-- Skrypt specyficzny dla strony głównej: renderuje bloki z content.json -->
+    <!-- RENDERER DANYCH Z CONTENT.JSON -->
     <script>
         const icons = {
             "Zegar": `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`,
@@ -253,6 +211,7 @@
                             case 'blok_html':
                                 html += `<div class="w-full reveal">${blok.kod || ''}</div>`;
                                 break;
+                        switch (blok.type) {
                         }
                         html += `</div></section>`;
                     });
