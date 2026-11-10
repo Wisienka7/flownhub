@@ -44,7 +44,7 @@
     {
       "type": "blok_tekst_grafika",
       "tytul": "Jak wdrożymy automatyzację w Twoim biznesie?",
-      "tresc": "1. **Audyt procesów:** Analizujemy, które zadania w Twojej firmie pochłaniają najwięcej czasu i generują wąskie gardła.\n2. **Projekt architektury:** Tworzymy schemat integracji dopasowany specyficznie do narzędzi, z których już korzystasz.\n3. **Wdrożenie i testy:** Łączymy systemy (np. Make, Zapier, API, bazy danych) i testujemy stabilność przepływów.\n4. **Optymalizacja i wsparcie:** Oddajemy gotowe narzędzie i szkolimy zespół z jego obsługi.",
+      "tresc": "1. **Audyt procesów:** Analizujemy, które zadania w Twojej firmie pochłaniają najwięcej czasu i generują wąskie gardła.\n\n2. **Projekt architektury:** Tworzymy schemat integracji dopasowany specyficznie do narzędzi, z których już korzystasz.\n\n3. **Wdrożenie i testy:** Łączymy systemy (np. Make, Zapier, API, bazy danych) i testujemy stabilność przepływów.\n\n4. **Optymalizacja i wsparcie:** Oddajemy gotowe narzędzie i szkolimy zespół z jego obsługi.",
       "zdjecie": "/Zrzut ekranu 2026-11-10 o 22.34.15.png",
       "uklad": "Grafika po lewej",
       "btn_text": "Umów bezpłatną konsultację",
