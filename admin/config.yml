@@ -97,3 +97,246 @@ collections:
         fields:
           - {label: "Tytuł strony", name: "tytul", widget: "string", default: "Polityka Prywatności"}
           - {label: "Treść polityki", name: "tresc", widget: "markdown"}
+          # --- PODSTRONA: AUTOMATYZACJE PROCESÓW ---
+      - label: "Automatyzacje Procesów"
+        name: "automatyzacje_procesow"
+        file: "automatyzacje-procesow.json"
+        fields:
+          - {label: "Tytuł Hero (Sekcja Główna)", name: "hero_title", widget: "string", default: "Automatyzacje Procesów"}
+          - {label: "Opis Hero", name: "hero_desc", widget: "text", required: false}
+          - {label: "Tekst Przycisku Hero", name: "hero_btn_text", widget: "string", required: false}
+          - label: "Sekcje"
+            name: "sekcje"
+            widget: "list"
+            types:
+              - label: "Blok: Kafelki"
+                name: "blok_kafelki"
+                widget: "object"
+                fields:
+                  - {label: "Tytuł Sekcji", name: "tytul", widget: "string"}
+                  - {label: "Opis pod tytułem", name: "opis", widget: "text", required: false}
+                  - {label: "Styl wizualny", name: "styl", widget: "select", options: ["Niebieski (Standard)", "Czerwony (Problemy)"], default: "Niebieski (Standard)"}
+                  - label: "Kafelki"
+                    name: "kafelki"
+                    widget: "list"
+                    fields:
+                      - {label: "Ikona", name: "ikona", widget: "select", options: ["Zegar", "Dokumenty", "Trybik", "Żarówka", "Ostrzeżenie", "Wykres", "Kopiuj"]}
+                      - {label: "Tytuł Kafelka", name: "tytul_kafelek", widget: "string"}
+                      - {label: "Tekst", name: "tekst_kafelek", widget: "text"}
+                      - {label: "Tekst Przycisku", name: "btn_text", widget: "string", required: false}
+                      - {label: "Link Przycisku", name: "btn_link", widget: "string", required: false}
+              - label: "Blok: Tekst + Grafika"
+                name: "blok_tekst_grafika"
+                widget: "object"
+                fields:
+                  - {label: "Tytuł", name: "tytul", widget: "string"}
+                  - {label: "Treść", name: "tresc", widget: "markdown"}
+                  - {label: "Zdjęcie (Link/Wybierz)", name: "zdjecie", widget: "image"}
+                  - {label: "Układ", name: "uklad", widget: "select", options: ["Grafika po prawej", "Grafika po lewej"]}
+                  - {label: "Tekst Przycisku", name: "btn_text", widget: "string", required: false}
+                  - {label: "Link Przycisku", name: "btn_link", widget: "string", required: false}
+              - label: "Blok: Tytuł + Tekst na środku"
+                name: "blok_tytul_tekst"
+                widget: "object"
+                fields:
+                  - {label: "Tytuł", name: "tytul", widget: "string"}
+                  - {label: "Treść", name: "tresc", widget: "markdown"}
+                  - {label: "Tekst Przycisku", name: "btn_text", widget: "string", required: false}
+                  - {label: "Link Przycisku", name: "btn_link", widget: "string", required: false}
+              - label: "Blok: Sam tekst (bez tytułu)"
+                name: "blok_sam_tekst"
+                widget: "object"
+                fields:
+                  - {label: "Treść (wyróżniona)", name: "tresc", widget: "markdown"}
+              - label: "Blok: Baner CTA"
+                name: "blok_cta"
+                widget: "object"
+                fields:
+                  - {label: "Tytuł (Biały)", name: "tytul", widget: "string"}
+                  - {label: "Tytuł (Kolorowy)", name: "tytul_wyrozniony", widget: "string", required: false}
+                  - {label: "Opis", name: "opis", widget: "text"}
+                  - {label: "Tekst Przycisku", name: "btn_text", widget: "string"}
+                  - {label: "Link Przycisku", name: "btn_link", widget: "string"}
+
+      # --- PODSTRONA: NARZĘDZIA UŁATWIAJĄCE PRACĘ ---
+      - label: "Narzędzia ułatwiające pracę"
+        name: "narzedzia_pracy"
+        file: "narzedzia-ulatwiajace-prace.json"
+        fields:
+          - {label: "Tytuł Hero (Sekcja Główna)", name: "hero_title", widget: "string", default: "Narzędzia ułatwiające pracę"}
+          - {label: "Opis Hero", name: "hero_desc", widget: "text", required: false}
+          - {label: "Tekst Przycisku Hero", name: "hero_btn_text", widget: "string", required: false}
+          - label: "Sekcje"
+            name: "sekcje"
+            widget: "list"
+            types:
+              - label: "Blok: Kafelki"
+                name: "blok_kafelki"
+                widget: "object"
+                fields:
+                  - {label: "Tytuł Sekcji", name: "tytul", widget: "string"}
+                  - {label: "Opis pod tytułem", name: "opis", widget: "text", required: false}
+                  - {label: "Styl wizualny", name: "styl", widget: "select", options: ["Niebieski (Standard)", "Czerwony (Problemy)"], default: "Niebieski (Standard)"}
+                  - label: "Kafelki"
+                    name: "kafelki"
+                    widget: "list"
+                    fields:
+                      - {label: "Ikona", name: "ikona", widget: "select", options: ["Zegar", "Dokumenty", "Trybik", "Żarówka", "Ostrzeżenie", "Wykres", "Kopiuj"]}
+                      - {label: "Tytuł Kafelka", name: "tytul_kafelek", widget: "string"}
+                      - {label: "Tekst", name: "tekst_kafelek", widget: "text"}
+                      - {label: "Tekst Przycisku", name: "btn_text", widget: "string", required: false}
+                      - {label: "Link Przycisku", name: "btn_link", widget: "string", required: false}
+              - label: "Blok: Tekst + Grafika"
+                name: "blok_tekst_grafika"
+                widget: "object"
+                fields:
+                  - {label: "Tytuł", name: "tytul", widget: "string"}
+                  - {label: "Treść", name: "tresc", widget: "markdown"}
+                  - {label: "Zdjęcie (Link/Wybierz)", name: "zdjecie", widget: "image"}
+                  - {label: "Układ", name: "uklad", widget: "select", options: ["Grafika po prawej", "Grafika po lewej"]}
+                  - {label: "Tekst Przycisku", name: "btn_text", widget: "string", required: false}
+                  - {label: "Link Przycisku", name: "btn_link", widget: "string", required: false}
+              - label: "Blok: Tytuł + Tekst na środku"
+                name: "blok_tytul_tekst"
+                widget: "object"
+                fields:
+                  - {label: "Tytuł", name: "tytul", widget: "string"}
+                  - {label: "Treść", name: "tresc", widget: "markdown"}
+                  - {label: "Tekst Przycisku", name: "btn_text", widget: "string", required: false}
+                  - {label: "Link Przycisku", name: "btn_link", widget: "string", required: false}
+              - label: "Blok: Sam tekst (bez tytułu)"
+                name: "blok_sam_tekst"
+                widget: "object"
+                fields:
+                  - {label: "Treść (wyróżniona)", name: "tresc", widget: "markdown"}
+              - label: "Blok: Baner CTA"
+                name: "blok_cta"
+                widget: "object"
+                fields:
+                  - {label: "Tytuł (Biały)", name: "tytul", widget: "string"}
+                  - {label: "Tytuł (Kolorowy)", name: "tytul_wyrozniony", widget: "string", required: false}
+                  - {label: "Opis", name: "opis", widget: "text"}
+                  - {label: "Tekst Przycisku", name: "btn_text", widget: "string"}
+                  - {label: "Link Przycisku", name: "btn_link", widget: "string"}
+
+      # --- PODSTRONA: ZAUTOMATYZOWANE SYSTEMY CRM ---
+      - label: "Zautomatyzowane systemy CRM"
+        name: "zautomatyzowane_crm"
+        file: "zautomatyzowane-crm.json"
+        fields:
+          - {label: "Tytuł Hero (Sekcja Główna)", name: "hero_title", widget: "string", default: "Zautomatyzowane systemy CRM"}
+          - {label: "Opis Hero", name: "hero_desc", widget: "text", required: false}
+          - {label: "Tekst Przycisku Hero", name: "hero_btn_text", widget: "string", required: false}
+          - label: "Sekcje"
+            name: "sekcje"
+            widget: "list"
+            types:
+              - label: "Blok: Kafelki"
+                name: "blok_kafelki"
+                widget: "object"
+                fields:
+                  - {label: "Tytuł Sekcji", name: "tytul", widget: "string"}
+                  - {label: "Opis pod tytułem", name: "opis", widget: "text", required: false}
+                  - {label: "Styl wizualny", name: "styl", widget: "select", options: ["Niebieski (Standard)", "Czerwony (Problemy)"], default: "Niebieski (Standard)"}
+                  - label: "Kafelki"
+                    name: "kafelki"
+                    widget: "list"
+                    fields:
+                      - {label: "Ikona", name: "ikona", widget: "select", options: ["Zegar", "Dokumenty", "Trybik", "Żarówka", "Ostrzeżenie", "Wykres", "Kopiuj"]}
+                      - {label: "Tytuł Kafelka", name: "tytul_kafelek", widget: "string"}
+                      - {label: "Tekst", name: "tekst_kafelek", widget: "text"}
+                      - {label: "Tekst Przycisku", name: "btn_text", widget: "string", required: false}
+                      - {label: "Link Przycisku", name: "btn_link", widget: "string", required: false}
+              - label: "Blok: Tekst + Grafika"
+                name: "blok_tekst_grafika"
+                widget: "object"
+                fields:
+                  - {label: "Tytuł", name: "tytul", widget: "string"}
+                  - {label: "Treść", name: "tresc", widget: "markdown"}
+                  - {label: "Zdjęcie (Link/Wybierz)", name: "zdjecie", widget: "image"}
+                  - {label: "Układ", name: "uklad", widget: "select", options: ["Grafika po prawej", "Grafika po lewej"]}
+                  - {label: "Tekst Przycisku", name: "btn_text", widget: "string", required: false}
+                  - {label: "Link Przycisku", name: "btn_link", widget: "string", required: false}
+              - label: "Blok: Tytuł + Tekst na środku"
+                name: "blok_tytul_tekst"
+                widget: "object"
+                fields:
+                  - {label: "Tytuł", name: "tytul", widget: "string"}
+                  - {label: "Treść", name: "tresc", widget: "markdown"}
+                  - {label: "Tekst Przycisku", name: "btn_text", widget: "string", required: false}
+                  - {label: "Link Przycisku", name: "btn_link", widget: "string", required: false}
+              - label: "Blok: Sam tekst (bez tytułu)"
+                name: "blok_sam_tekst"
+                widget: "object"
+                fields:
+                  - {label: "Treść (wyróżniona)", name: "tresc", widget: "markdown"}
+              - label: "Blok: Baner CTA"
+                name: "blok_cta"
+                widget: "object"
+                fields:
+                  - {label: "Tytuł (Biały)", name: "tytul", widget: "string"}
+                  - {label: "Tytuł (Kolorowy)", name: "tytul_wyrozniony", widget: "string", required: false}
+                  - {label: "Opis", name: "opis", widget: "text"}
+                  - {label: "Tekst Przycisku", name: "btn_text", widget: "string"}
+                  - {label: "Link Przycisku", name: "btn_link", widget: "string"}
+
+      # --- PODSTRONA: ZAUTOMATYZOWANE STRONY INTERNETOWE ---
+      - label: "Zautomatyzowane strony internetowe"
+        name: "zautomatyzowane_strony"
+        file: "zautomatyzowane-strony.json"
+        fields:
+          - {label: "Tytuł Hero (Sekcja Główna)", name: "hero_title", widget: "string", default: "Zautomatyzowane strony internetowe"}
+          - {label: "Opis Hero", name: "hero_desc", widget: "text", required: false}
+          - {label: "Tekst Przycisku Hero", name: "hero_btn_text", widget: "string", required: false}
+          - label: "Sekcje"
+            name: "sekcje"
+            widget: "list"
+            types:
+              - label: "Blok: Kafelki"
+                name: "blok_kafelki"
+                widget: "object"
+                fields:
+                  - {label: "Tytuł Sekcji", name: "tytul", widget: "string"}
+                  - {label: "Opis pod tytułem", name: "opis", widget: "text", required: false}
+                  - {label: "Styl wizualny", name: "styl", widget: "select", options: ["Niebieski (Standard)", "Czerwony (Problemy)"], default: "Niebieski (Standard)"}
+                  - label: "Kafelki"
+                    name: "kafelki"
+                    widget: "list"
+                    fields:
+                      - {label: "Ikona", name: "ikona", widget: "select", options: ["Zegar", "Dokumenty", "Trybik", "Żarówka", "Ostrzeżenie", "Wykres", "Kopiuj"]}
+                      - {label: "Tytuł Kafelka", name: "tytul_kafelek", widget: "string"}
+                      - {label: "Tekst", name: "tekst_kafelek", widget: "text"}
+                      - {label: "Tekst Przycisku", name: "btn_text", widget: "string", required: false}
+                      - {label: "Link Przycisku", name: "btn_link", widget: "string", required: false}
+              - label: "Blok: Tekst + Grafika"
+                name: "blok_tekst_grafika"
+                widget: "object"
+                fields:
+                  - {label: "Tytuł", name: "tytul", widget: "string"}
+                  - {label: "Treść", name: "tresc", widget: "markdown"}
+                  - {label: "Zdjęcie (Link/Wybierz)", name: "zdjecie", widget: "image"}
+                  - {label: "Układ", name: "uklad", widget: "select", options: ["Grafika po prawej", "Grafika po lewej"]}
+                  - {label: "Tekst Przycisku", name: "btn_text", widget: "string", required: false}
+                  - {label: "Link Przycisku", name: "btn_link", widget: "string", required: false}
+              - label: "Blok: Tytuł + Tekst na środku"
+                name: "blok_tytul_tekst"
+                widget: "object"
+                fields:
+                  - {label: "Tytuł", name: "tytul", widget: "string"}
+                  - {label: "Treść", name: "tresc", widget: "markdown"}
+                  - {label: "Tekst Przycisku", name: "btn_text", widget: "string", required: false}
+                  - {label: "Link Przycisku", name: "btn_link", widget: "string", required: false}
+              - label: "Blok: Sam tekst (bez tytułu)"
+                name: "blok_sam_tekst"
+                widget: "object"
+                fields:
+                  - {label: "Treść (wyróżniona)", name: "tresc", widget: "markdown"}
+              - label: "Blok: Baner CTA"
+                name: "blok_cta"
+                widget: "object"
+                fields:
+                  - {label: "Tytuł (Biały)", name: "tytul", widget: "string"}
+                  - {label: "Tytuł (Kolorowy)", name: "tytul_wyrozniony", widget: "string", required: false}
+                  - {label: "Opis", name: "opis", widget: "text"}
+                  - {label: "Tekst Przycisku", name: "btn_text", widget: "string"}
+                  - {label: "Link Przycisku", name: "btn_link", widget: "string"}
