@@ -1,0 +1,89 @@
+{
+  "hero_title": "Automatyzacje procesów",
+  "hero_desc": "Wyeliminuj ręczną, powtarzalną pracę i zaoszczędź czas!",
+  "hero_btn_text": "NAPISZ DO NAS",
+  "sekcje": [
+    {
+      "type": "blok_tekst_grafika",
+      "tytul": "Jak chaos w dokumentach i zadaniach hamuje rozwój Twojej firmy?",
+      "tresc": "Większość rozwijających się firm boryka się z tym samym problemem: rosnąca liczba klientów oznacza lawinę ręcznej pracy. Pracownicy przekelniają dane, sprawdzają statusy zamówień w pięciu miejscach naraz i gubią się w mailach.\n\n**Flow N Hub** projektuje dedykowane systemy automatyzacji, które spinają Twoje dotychczasowe aplikacje w jeden sprawny organizm. System wykonuje nudną robotę w ułamku sekundy, a Ty i Twój zespół możecie skupić się na tym, co przynosi realny zysk: na sprzedaży i relacjach z klientami.",
+      "zdjecie": "/Neonowy panel analityczny na żywo.png",
+      "uklad": "Grafika po prawej",
+      "btn_text": "Dowiedz się więcej",
+      "btn_link": "#kontakt"
+    },
+    {
+      "type": "blok_kafelki",
+      "tytul": "Dlaczego automatyzacja procesów biznesowych to klucz do wzrostu?",
+      "opis": "Przestań tracić czas na powtarzalne, manualne zadania. Wprowadź inteligentne rozwiązania i pozwól swojej firmie skalować się szybciej.",
+      "styl": "Niebieski (Standard)",
+      "kafelki": [
+        {
+          "ikona": "Zegar",
+          "tytul_kafelek": "Oszczędność czasu zespołu",
+          "tekst_kafelek": "Twoi pracownicy odzyskają dziesiątki godzin miesięcznie, rezygnując z bezmyślnego przepisywania danych między arkuszami a systemami.",
+          "btn_text": "",
+          "btn_link": ""
+        },
+        {
+          "ikona": "Wykres",
+          "tytul_kafelek": "Redukcja kosztów operacyjnych",
+          "tekst_kafelek": "Automatyzacja powtarzalnych zadań eliminuje ludzkie błędy, kosztowne pomyłki oraz drastycznie obniża koszty stałe obsługi procesów.",
+          "btn_text": "",
+          "btn_link": ""
+        },
+        {
+          "ikona": "Trybik",
+          "tytul_kafelek": "Płynny obieg informacji",
+          "tekst_kafelek": "Wszystkie Twoje narzędzia (CRM, e-mail, Excel, systemy księgowe) zaczną wreszcie wymieniać dane w czasie rzeczywistym, bez opóźnień.",
+          "btn_text": "",
+          "btn_link": ""
+        }
+      ]
+    },
+    {
+      "type": "blok_tytul_tekst",
+      "tytul": "Jak wdrożymy automatyzację w Twoim biznesie?",
+      "tresc": "1. **Audyt procesów:** Analizujemy, które zadania w Twojej firmie pochłaniają najwięcej czasu i generują wąskie gardła.\n2. **Projekt architektury:** Tworzymy schemat integracji dopasowany specyficznie do narzędzi, z których już korzystasz.\n3. **Wdrożenie i testy:** Łączymy systemy (np. Make, Zapier, API, bazy danych) i testujemy stabilność przepływów.\n4. **Optymalizacja i wsparcie:** Oddajemy gotowe narzędzie i szkolimy zespół z jego obsługi.",
+      "btn_text": "Umów bezpłatną konsultację",
+      "btn_link": "#kontakt"
+    },
+    {
+      "type": "blok_kafelki",
+      "tytul": "Obszary, które możemy zautomatyzować od zaraz",
+      "opis": "Dostosowujemy technologie do realnych potrzeb Twojej branży i specyfiki operacyjnej.",
+      "styl": "Niebieski (Standard)",
+      "kafelki": [
+        {
+          "ikona": "Dokumenty",
+          "tytul_kafelek": "Obsługa dokumentów",
+          "tekst_kafelek": "Automatyczne pobieranie dokumentów, sczytywanie danych przez AI, opisywanie kosztów i przesyłanie ich bezpośrednio do osób odpowiedzialnych.",
+          "btn_text": "",
+          "btn_link": ""
+        },
+        {
+          "ikona": "Kopiuj",
+          "tytul_kafelek": "Synchronizacja baz danych",
+          "tekst_kafelek": "Klienci, zamówienia i statusy płatności aktualizują się automatycznie we wszystkich systemach bez udziału człowieka.",
+          "btn_text": "",
+          "btn_link": ""
+        },
+        {
+          "ikona": "Żarówka",
+          "tytul_kafelek": "Powiadomienia i raporty",
+          "tekst_kafelek": "Automatyczne powiadomienia dla handlowców na Slacku czy w SMS-ach o nowych leadach oraz generowanie cyklicznych raportów menedżerskich.",
+          "btn_text": "",
+          "btn_link": ""
+        }
+      ]
+    },
+    {
+      "type": "blok_cta",
+      "tytul": "Gotowy na uwolnienie czasu swojej firmy?",
+      "opis": "Umów się na krótką rozmowę, podczas której wskażemy Ci co najmniej 3 procesy w Twojej firmie, które można zautomatyzować w ciągu najbliższych tygodni.",
+      "btn_text": "Skontaktuj się z nami",
+      "btn_link": "/index.html#kontakt",
+      "tytul_wyrozniony": "Porozmawiajmy o automatyzacji."
+    }
+  ]
+}
